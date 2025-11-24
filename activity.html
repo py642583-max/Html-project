@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sweet Treats Bakery</title>
+  <!-- optional font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#8e3b46; /* header color like image */
+      --muted:#6b6b6b;
+      --bg:#f7f7f7;
+      --card:#ffffff;
+      --radius:10px;
+      font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing: border-box; margin:0; padding:0}
+    body{
+      background: linear-gradient(#f2f2f2, #fafafa);
+      color:#222;
+      line-height:1.45;
+      padding:24px;
+    }
+
+    header{
+      background:var(--accent);
+      color:white;
+      padding:36px 20px;
+      border-radius:8px;
+      text-align:center;
+      margin-bottom:28px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    header h1{
+      font-size:36px;
+      letter-spacing:1px;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+    nav{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      font-weight:500;
+      opacity:0.95;
+    }
+    nav a{
+      color:rgba(255,255,255,0.9);
+      text-decoration:none;
+      padding:6px 10px;
+      border-radius:6px;
+    }
+    nav a:hover{background:rgba(255,255,255,0.06)}
+
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      background:var(--card);
+      padding:28px;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    .hero{
+      text-align:center;
+      padding:18px 12px 30px;
+    }
+    .hero h2{
+      margin-bottom:8px;
+      font-size:22px;
+      color:#333;
+    }
+    .hero p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    .bakery-image{
+      max-width:260px;
+      height:140px;
+      margin:12px auto;
+      display:block;
+      border-radius:8px;
+      object-fit:cover;
+      background:linear-gradient(180deg,#fff,#eee);
+      border:1px solid #e6e6e6;
+    }
+
+    .section-title{
+      text-align:center;
+      font-weight:600;
+      margin:24px 0 14px;
+      color:var(--accent);
+    }
+
+    /* Menu table */
+    .menu-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:12px 0 20px;
+      table-layout:fixed;
+    }
+    .menu-table th, .menu-table td{
+      border:1px solid #dcdcdc;
+      padding:12px 10px;
+      text-align:left;
+      vertical-align:middle;
+      word-wrap:break-word;
+    }
+    .menu-table th{
+      background:#f4f4f4;
+      color:#333;
+      font-weight:600;
+    }
+    .menu-table td.price{
+      text-align:right;
+      width:90px;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    /* Contact */
+    .contact{
+      text-align:center;
+      padding:20px 10px;
+      margin-top:8px;
+    }
+    .contact p{color:var(--muted)}
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:10px 16px;
+      border-radius:8px;
+      text-decoration:none;
+      margin-top:10px;
+      font-weight:600;
+    }
+
+    /* Responsive */
+    @media (max-width:640px){
+      header h1{font-size:26px}
+      .bakery-image{max-width:200px; height:120px}
+      .menu-table th, .menu-table td{padding:10px 6px}
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sweet Treats Bakery</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <h2>Welcome to Sweet Treats!</h2>
+      <p>Freshly baked cakes, pastries, and cookies made with love every day.</p>
+      <!-- अगर आपके पास कोई तस्वीर है तो src बदल दें -->
+      <img src="https://via.placeholder.com/520x280?text=Bakery+Image" alt="Bakery Image" class="bakery-image">
+    </section>
+
+    <h3 class="section-title" id="menu">Our Delicious Menu</h3>
+
+    <table class="menu-table" aria-label="Bakery menu">
+      <thead>
+        <tr>
+          <th style="width:35%">Item</th>
+          <th>Description</th>
+          <th style="width:12%">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chocolate Cake</td>
+          <td>Rich and moist chocolate delight</td>
+          <td class="price">₹250</td>
+        </tr>
+        <tr>
+          <td>Strawberry Cupcake</td>
+          <td>Soft cupcakes with strawberry frosting</td>
+          <td class="price">₹120</td>
+        </tr>
+        <tr>
+          <td>Cookies Pack</td>
+          <td>Freshly baked assorted cookies</td>
+          <td class="price">₹150</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="contact" id="contact">
+      <h3 class="section-title">Contact Us</h3>
+      <p>Phone: +91 98765 43210 — Address: Sweet Lane, Your City</p>
+      <a class="btn" href="mailto:info@sweettreats.example">Email Us</a>
+    </section>
+  </main>
+
+</body>
+</html>
